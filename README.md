@@ -6,8 +6,17 @@ Zipkin is a distributed tracing system. It helps gather timing data needed to tr
 curl -sSL https://zipkin.io/quickstart.sh | bash -s
 
 
-## RUN 
+## RUN Locally
 java -jar zipkin.jar
+
+## Build and Push Docker Using Jar
+- Build Docker Images 
+    - docker build -t metamagic/msk8-zipkin:1.0 .
+- Run Docker Image
+    - docker run -p 9411:9411 metamagic/msk8-zipkin:1.0
+- Push Docker Image
+    - docker image push metamagic/msk8-zipkin:1.0
+
 
 
 ## Microservice Request Tracing
