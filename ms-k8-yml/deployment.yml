@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zipkin-pod
+  namespace: shoppingportal
+  labels:
+    app: zipkin
+    zone: prod
+    version: v1
+spec:
+  containers:
+  - name: zipkin-cntr
+    image: metamagic/msk8-zipkin:1.0
+    imagePullPolicy: IfNotPresent
+    ports:
+     - containerPort: 9411
